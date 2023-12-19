@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DFA Minimization Result</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DFA Minimization Result</h1>
+
+  <h2>Minimized Partitions:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Partition</th>
+        <th>States</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for partition in minimized_partitions %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>
+            {% for state in partition %}
+              {{ state }}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
